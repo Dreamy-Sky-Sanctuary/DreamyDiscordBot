@@ -44,9 +44,9 @@ class TreasureHuntManager(commands.Cog):
         logger.command(interaction)
         await interaction.response.send_message(f"Removing all threads on this channel", ephemeral=True)
         
-        threads = interaction.channel.archived_threads(private=True)
-        for thread in threads.iter():
-            await thread.delete(reason="Treasure Run Cleanup")
+        # threads = interaction.channel.archived_threads(private=True)
+        # for thread in threads.iter(): # TODO: this is not working, need to fix
+        #     await thread.delete(reason="Treasure Run Cleanup")
         
         threads = interaction.channel.threads
         for thread in threads:
