@@ -40,7 +40,7 @@ class TreasureHuntManager(commands.Cog):
     
     @app_commands.command(name="clear_treasure_run", description="removes all treasure run threads.")
     @is_eventlumi()
-    async def setupTreasureRun(self, interaction: discord.Interaction) -> None:
+    async def clearTreasureRun(self, interaction: discord.Interaction) -> None:
         logger.command(interaction)
         await interaction.response.send_message(f"Removing all threads on this channel", ephemeral=True)
         
