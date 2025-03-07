@@ -1,7 +1,7 @@
 FROM python:3.13-slim-bullseye
 
 # Set the working directory
-WORKDIR /dreamy-bot/Bot
+WORKDIR /DreamyDiscordBot/Bot
 
 # Copy the requirements file
 COPY requirements.txt .

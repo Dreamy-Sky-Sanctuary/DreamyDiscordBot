@@ -21,6 +21,7 @@ from ticketMenu import PersistentTicketView, PersistentCloseTicketView
 from musicMenu import PersistentMusicView
 from cogs.RunManager import RunManager
 from cogs.AccessManager import AccessManager, PersistentAcceptRulesView
+from cogs.TreasureHuntManager import TreasureHuntManager
 from logger import logger
 
 
@@ -76,6 +77,7 @@ async def on_ready() -> None:
     # Load the cogs
     await client.add_cog(RunManager(client))
     await client.add_cog(AccessManager(client))
+    await client.add_cog(TreasureHuntManager(client))
     
     # Set Rich Presence (Streaming)
     if TESTING == "True":

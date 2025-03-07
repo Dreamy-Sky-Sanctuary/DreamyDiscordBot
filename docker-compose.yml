@@ -5,17 +5,17 @@ services:
       dockerfile: Updater.Dockerfile
     # container_name: dreamy-updater
     volumes:
-      - ./:/dreamy-bot
+      - ./:/DreamyDiscordBot
   bot:
     env_file:
       - Bot/.env
-    depends_on:
-      updater:
-        condition: service_completed_successfully
+    # depends_on:
+    #   updater:
+    #     condition: service_completed_successfully
     build:
       context: .
       dockerfile: Bot.Dockerfile
     # container_name: dreamy-bot
     volumes:
-      - ./:/dreamy-bot
+      - ./:/DreamyDiscordBot
       - ./dreamy-data:/dreamy-data
