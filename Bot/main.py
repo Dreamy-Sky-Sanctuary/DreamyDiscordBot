@@ -7,7 +7,6 @@ from discord.ext import commands
 from discord.types.activity import ActivityAssets
 import asyncio
 from functions import send_message_to_user
-from pretty_help import PrettyHelp, AppMenu, AppNav
 
 # Load the environment variables
 load_dotenv()
@@ -31,9 +30,7 @@ intents: discord.Intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
 
-help_menu = PrettyHelp(navigation=AppMenu(), color=discord.Colour.green(), delete_invoke=True, no_category="Commands", image_url="https://i.postimg.cc/28LPZLBW/20240821214134-1.jpg", case_insensitive=True, sort_commands=False)
-
-client = commands.Bot(command_prefix="/", intents=intents, help_command=help_menu)
+client = commands.Bot(command_prefix="/", intents=intents)
 
 # Startup of the bot
 @client.event
